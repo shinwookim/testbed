@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>blog</title>
+  <meta name="description" content="A Jekyll theme for content-rich sites">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+<!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: [
+      "MathMenu.js",
+      "MathZoom.js",
+      "AssistiveMML.js",
+      "a11y/accessibility-menu.js"
+    ],
+    jax: ["input/TeX", "output/CommonHTML"],
+    TeX: {
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    }
+  });
+</script>
+<script>
+  window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+
+
+  <link rel="stylesheet" type="text/css" href="/testbed/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/testbed/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/testbed/">
+
+  <link rel="alternate" type="application/rss+xml" title="Tufte-Jekyll" href="/testbed/feed.xml" />
+</head>
+
+  <body class="full-width">
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/testbed/"><img class="badge" src="/testbed/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+		    
+		      <a class="active" href="/testbed/" class="active">blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/testbed/page/">page</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/testbed/about/">About</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/testbed/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article>
+        <h1 class="content-listing-header sans">Articles</h1>
+  <ul class="content-listing ">
+          
+        <li class="listing">
+          <hr class="slender">
+          <a href="/testbed/articles/22/math"><h3 class="contrast">Sample-Test</h3></a>
+          <br><span class="smaller">May 5, 2022</span>  <br/>
+          <div><h1 id="definitions-and-terminology">Definitions and Terminology</h1>
+<h3 id="example-1a-free-fall">Example 1A (Free Fall)</h3>
+<blockquote>
+  <p>Newton’s Second Law of Motion states that an object’s mass $m$ times its acceleration is equal to the total force acting on the object. If we let $h$ represent the height of the object, then we can restate Newton’s second Law of Motion as: $m \cdot \frac{d^2h}{dt^2}=-gm$.If a baseball was dropped from the top of a 100 foot building, then this equation can be simplified to $\frac{d^2h}{dt^2}=-32\frac{ft}{s^2}$. This is an example of a <strong>second order ordinary differential equation</strong><label for="mn-id-whatever" class="margin-toggle sidenote-number"></label><input type="checkbox" id="mn-id-whatever" class="margin-toggle" /><span class="sidenote">Refer to textbook pg22-24 </span>.</p>
+</blockquote>
+
+<h4 id="solve-with-anti-differentiation-as-seen-in-calculus">Solve with Anti-differentiation (As seen in Calculus)</h4>
+<p>\(\begin{align}
+\int\frac{d^2h}{dt^2}=\int-32dt\\
+\frac{dh}{dt}=-32t+C\\ \text{Since 'Dropped' implies that } v=\frac{dh}{dt}=0,\text{ when }t=0,\\
+0 = -32(0)+C \implies C=0 \\
+\therefore \frac{dh}{dt}=-32t
+\end{align}\)
+\(\begin{align}
+\int\frac{dh}{dt}\cdot dt=\int-32\cdot dt\\
+h=\frac{-32t^2}{2}+C=-16t^2+C\\
+\verb|Since h=100 when t=0,| \\
+100 =0+C\implies C=100\\
+\therefore h(t)=-16t^2+100
+\end{align}\)</p>
+<h2 id="definitions">Definitions</h2>
+<p>An equation containg derivatives of one or more unkown functions with respect to one or more indepedenet variables, is said to be a <strong>differential equation</strong> (DE).</p>
+
+<p>An <strong>ordinary differential equation</strong> (ODE) contains only ordinary derivatives of one or more dependent varibles with respect to a single independent variable.
+<em>I.e.,</em> The equation does not contain any <em>partial derivatives</em>.</p>
+
+<h3 id="example-1-find-the-order-of-the-de">Example 1: Find the order of the DE</h3>
+<p>$\frac{dy}{dx}=x^2+y^2$ (1st order) - 1st derivative
+$\frac{d^2y}{dx^2}+2\frac{dy}{dx}-3y=0$ (2nd order) - 2nd derivative
+$\frac{dy}{dt}+3\frac{dx}{dt}=t$ (1st order) -  both 1st derivatives</p>
+
+<p>A <strong>partial differential equation</strong> (PDE) contains partial derivatives (usually denoted as $\partial y$ or $\partial x$) of one or more dependent variables of two or more indepedent variables.</p>
+<blockquote>
+  <p>$\partial x$ means differentiating with respect to $x$ while considering all other variables(such as $y$) as constants.</p>
+</blockquote>
+
+\[\begin{align}
+\frac{\partial}{\partial x}(3x^2+y^3)=6x \\
+\frac{\partial}{\partial y}(3x^2+y^3)=3y^2
+\end{align}\]
+
+<h3 id="example-2">Example 2</h3>
+<p>$\frac{\partial y}{\partial t}+3\frac{\partial y}{\partial s}=t$ (1st Order PDE)
+$\frac{\partial^2 u}{\partial x^2}+3\frac{\partial^2 y}{\partial y^2}+2y=0$ (2nd Order PDE)</p>
+
+<p>The <strong>order of differential equation</strong>(ODE or PDE) is the order of the highest derivative in the equation.</p>
+
+<h3 id="example-3">Example 3</h3>
+<p>Give the order of thhthee following DE’s:
+$\frac{d^2y}{dx^2}+2x\frac{dy}{dx}+3=0$ (2nd order)
+$(\frac{dy}{dx})^2=2x+3$ (1st order) - 1st derivative is squared
+$3xdx+5y^2dy=0$ (1st order) - We can divide by the differential $dx$ to get $3x+5y^2\frac{dy}{dx}=0$</p>
+
+<p>A general nth order ordinary differential equation is often written as $F(t,y,y’,….,y^{(n)})=0$ where $y^{(n)}=\frac{d^ny}{dt^n}$</p>
+
+<p>An ordinary differential equation is said to be <strong>linear</strong> if it can be written in the form: $a_n(t)\frac{d^ny}{dt^n}+a_{n-1}(t)\frac{d^{n-1}y}{dt^{n-1}}+…+a_1(t)\frac{dy}{dt}+a_0(t)y=g(t)$ .</p>
+
+<h3 id="example-4">Example 4</h3>
+<p>Determine which of the following DE’s are linear and which are non linear</p>
+
+<h4 id="a-e2tfracdydtsinhtfracd2ydt2">(a) $e^{2t}\frac{dy}{dt}=\sinh{(t)}\frac{d^2y}{dt^2}$</h4>
+<p>\(\begin{align}
+\implies e^{2t}\frac{dy}{dt}-\sinh{(t)}\frac{d^2y}{dt^2}=0\\
+a_1 = 2^{2t},\ a_2=\sinh{t}\\
+\therefore \text{Linear, 2nd order}
+\end{align}\)</p>
+<h4 id="b-x2fracd2ydx23xfracdydx2xysinx-implies-textlinear">(b) $x^2\frac{d^2y}{dx^2}+3x\frac{dy}{dx}+2xy=\sin{x}$ $\implies \text{Linear}$</h4>
+<h4 id="c-fracd3ydt3-3t-implies-textlinear">(c) $\frac{d^3y}{dt^3}=-3t$ $\implies \text{Linear}$</h4>
+<h4 id="d-y2fracd2ydt2fracdydt-implies-textnon-linearcoeffecient-must-be-a-function-of-t">(d) $y^2\frac{d^2y}{dt^2}=\frac{dy}{dt}$ $\implies \text{Non-Linear(Coeffecient must be a function of t)}$</h4>
+<h4 id="e-fracdydx22ximplies-textnon-linearderivative-is-squared">(e) $(\frac{dy}{dx})^2=2x\implies \text{Non-Linear(Derivative is squared)}$</h4>
+<h4 id="f-yfracdydt1">(f) $y\frac{dy}{dt}=1$</h4>
+<p>\(\begin{align}
+\text{Divide by}\ y\ \text{to get}\ \frac{dy}{dt}=\frac{1}{y}\\
+\therefore \text{Non-Linear}
+\end{align}\)</p>
+
+<p>Any function $\phi$ defined on some interval $I$, which when subsittued into a differential equation reduces the equation to an identity, is said to be a <strong>solution</strong> of the equation on the interval. The interval $I$ is called the <strong>interval of definition.</strong></p>
+
+<p>A solution which the dependent variable is expressed solely in terms of the indepedent variable (such as $y=y(t)$) and constants is said to be an <strong>explicit solution</strong>. An explicit solution of a differential equation that is identically zero on an interval $I$ is called a <strong>trivial solution</strong>.</p>
+
+<p>A relation $G(t,y)=0$ is said to be an <strong>implicit solution</strong> of an ordinary differential equation on an interval $I$ provided there exists at least one function $\phi$ that satisfies the relation as well as the differential equation on $I$. That is, $G(t,y)=0$ defines the function implicitly.</p>
+
+<h3 id="example-5">Example 5</h3>
+<blockquote>
+  <p>Under compound interest, the rate of change($\frac{db}{dt}$) of a bank account balance $B(t)$ is <em>proportional to the size</em>. If $7,000 is initially invested, verify that $B(t)=7000e^{kt}$ is the solutions to the initial value DE $\frac{dB}{dt}=kB$; $B(0)=7000$</p>
+</blockquote>
+
+<blockquote>
+  <p>Note. Verify, here, means to subsitute the given function into the DE and check.</p>
+  <h4 id="step-a">Step A</h4>
+  <p>\(\begin{align}
+\frac{dB}{dt}=\frac{d}{dt}(7000e^{kt})\\
+=7000\cdot e^{kt}\cdot k=k\cdot B\ \checkmark\\
+\end{align}\)</p>
+  <h4 id="step-b">Step B</h4>
+  <p>\(\begin{align}
+B(0)=7000e^{(k\cdot 0)}=7000\cdot1=7000\ \checkmark\\
+\implies B(t)=7000e^{kt}\ \text{is an explicit solution}\\ \text{to the DE: }\frac{dB}{dt}=kt\ \text{with}\ B(0)=7000.
+\end{align}\)</p>
+  <h3 id="example-6">Example 6</h3>
+  <p>Verify that $y=\frac{1}{x}$ is an explicit solution of the differential equation $xy’+y=0$</p>
+</blockquote>
+
+<p>\(\begin{align}
+\verb|To find |\ y'\ \verb|:|\\
+y'=\frac{d}{dt}(x^{-1})=-\frac{1}{x^2}\\
+\verb|Substitute into DE|\\
+\verb|DE: LHS|=xy'+y=x(\frac{-1}{x^2})+(\frac{1}{x})\\
+=\frac{-1}{x}+\frac{1}{x}=0=\verb|RHS|\checkmark\\
+\therefore y=\frac{1}{x} \verb| is a solution to the DE|
+\end{align}\)</p>
+<h3 id="example-7">Example 7</h3>
+<blockquote>
+  <p>Verify that $y=e^{-t^2}\cdot \int_0^t e^{u^2} du+ c_1 e^{-t^2}$ is an explicit solution to the differential equation $y’+2ty=1$</p>
+</blockquote>
+
+<p>\(\begin{align}
+y'=e^{-t^2}\cdot\frac{d}{dt}(\int^t_0e^{u^2}du)+(\int_0^te^{u^2}dy)\cdot(-2t)e^{-t^2}+c_1e^{-t^2}\cdot(-2t)\\
+\text{Substitute into DE:}\\
+\verb|LHS|=y'+2ty=e^{-t^2}\cdot e^{t^2}-2te^{-t^2}\cdot\int_0^te^{u^2}du-c_1\cdot2te^{-t^2}+2t(e^{-t^2}\int_0^te^{u^2}du+c_1e^{-t^2})\\
+=1-2te^{-t^2}\int_0^t{e^{u^2}du}-c_1\cdot2te^{-t^2}+2te^{-t^2}\cdot\int_u^te^{u^2}du+2t\cdot c_1e^{-t^2}\\
+=1=\verb|RHS|\checkmark\\
+\therefore y=e^{-t^2}\int_0^te^{u^2}du+c_1e^{-t^2}\ \text{is a valid solution to the given DE}
+\end{align}\)</p>
+<h3 id="example-8">Example 8</h3>
+<blockquote>
+  <p>Verify that $x^2+4y^2-4=0$ is an implicit solution of the differential equation$\frac{dy}{dx}=-\frac{x}{4y}$. Find the interval of the definition $I$:</p>
+</blockquote>
+
+<p>\(\begin{align}
+\text{Use implicit differentiation (wrt}\ x) \\
+\verb|Given solution:| x^2+4y^2-4=0\\
+2x+4\cdot 2\cdot y'\frac{dy}{dx}=0\\
+2x+8y\frac{dy}{dx}=0\\
+\implies \frac{dy}{dx}=-\frac{2x}{8y}\\
+\text{Substitute into DE}\\
+\verb|LHS|=\frac{dy}{dx}=-\frac{2x}{8y}=-\frac{x}{4y}=\verb|RHS|\checkmark\\
+\therefore x^2+4y^2-4=0\ \text{is an implicit solution to the given DE}
+\end{align}\)</p>
+<h2 id="one-parameterone-unknown-constant-family-of-solutions-and-particular-solutions">One-Parameter(one unknown constant) Family of Solutions and Particular Solutions</h2>
+<h3 id="example-9">Example 9</h3>
+<h4 id="a-find-the-one-parameter-family-of-solutions-to-the-de-fracdxdt5-t2">(a) Find the one-parameter family of solutions to the DE $\frac{dx}{dt}=5-t^2$</h4>
+<p>$\implies x(t)=\int(5-t^2)dt=5t-\frac{t^3}{3}+C$</p>
+<h4 id="b-find-the-particular-solution-for-the-initial-condition-x35">(b) Find the particular solution for the initial condition $x(3)=5$</h4>
+<p>\(\begin{align}
+x(3)=5(3)-\frac{3^3}{3}+C=5\\
+15-9+C=5\\
+C=-1\\
+\therefore x(t)=5t-\frac{t^3}{3}-1 \text{ is the particular solution for the initial condition}\ x(3)=5.
+\end{align}\)</p>
+</div> 
+        </li>
+          
+        <li class="listing">
+          <hr class="slender">
+          <a href="/testbed/articles/20/Edge-Cases"><h3 class="contrast">Edge Cases</h3></a>
+          <br><span class="smaller">April 13, 2020</span>  <br/>
+          <div><p>Some edge cases and cautionary examples on using Markdown for writing content using this theme. In particular, list syntax can really knot things up.</p>
+</div> 
+        </li>
+          
+        <li class="listing">
+          <hr class="slender">
+          <a href="/testbed/articles/20/tufte-style-jekyll-blog"><h3 class="contrast">Tufte-style Jekyll blog</h3></a>
+          <br><span class="smaller">April 13, 2020</span>  <br/>
+          <div><p><span class="newthought">The Tufte Jekyll theme</span>  is an attempt to create a website design with the look and feel of Edward Tufte’s books and handouts. Tufte’s style is known for its extensive use of sidenotes, tight integration of graphics with text, and well-set typography.</p>
+</div> 
+        </li>
+    
+  </ul>
+    </article>
+    <span class="print-footer">blog - clay harmon</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail3"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/twitter_handle"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/+googlePlusName"><span class="icon-google2"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/GithubHandle"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/photos/FlickrUserID"><span class="icon-flickr3"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-rss2"></span></a>
+      </li>
+    
+      <li>
+        <a href="//vimeo.com/vimeo-id"><span class="icon-vimeo2"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.linkedin.com/"><span class="icon-linkedin"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2022 &nbsp;&nbsp;CLAY HARMON</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>
